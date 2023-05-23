@@ -1,0 +1,65 @@
+Comandos SQL para gerar as tabelas:
+
+create table address_tb(
+    id serial primary key,
+    cep varchar(255) not null,
+    city varchar(255) not null,
+    complement varchar(255),
+    latitude double precision not null,
+    longitude double precision not null,
+    nighborhood varchar(255) not null,
+    number varchar(255) not null,
+    state varchar(255) not null,
+    street varchar(255) not null
+)
+create table user_tb(
+    id serial primary key,
+    date timestamp   not null,
+    contact_number varchar(255) not null,
+    cpf varchar(14) not null,
+    email varchar(255) not null,
+    full_name varchar(255) not null,
+    password varchar(255) not null,
+    type varchar(255) not null,
+    id_address integer not null, 
+	constraint fk_address
+    foreign key (id_address)
+        references address_tb(id)
+)
+create table product_tb(
+    id serial primary key,
+    dosage varchar(255) not null,
+    laboratory_name varchar(255) not null,
+    price real not null,
+    product_description varchar(255),
+    product_image varchar(255) not null,
+    product_name varchar(255) not null,
+    product_register_date timestamp,
+    product_type varchar(255) not null,
+    stock_quantity integer not null,
+    register_date timestamp not null,
+    id_user integer not null,
+    constraint fk_user
+    foreign key (id_user)
+        references user_tb(id)
+)
+create table sale_tb(
+    id serial primary key,
+    price real not null,
+    quantity integer not null,
+    sale_date timestamp not null,
+    total_price real not null,
+    payment_method varchar(255) not null,
+    id_address integer not null,
+    constraint fk_address
+    foreign key (id_address)
+        references address_tb(id),
+    id_product integer not null,
+    constraint fk_product
+    foreign key (id_product)
+        references product_tb(id),
+    id_seller integer,
+    constraint fk_seller
+    foreign key (id_seller)
+        references user_tb(id)
+)

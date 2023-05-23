@@ -1,0 +1,81 @@
+.navigateMenu{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    padding: 20px;
+    color: #F1EDED;
+}
+.navigateMenuSellected{
+    color: rgb(4, 112, 53);
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    background-color: #F1EDED;
+    padding: 20px;
+    margin-right:0px;
+    width: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+.title{
+    margin-bottom: 34px;
+}
+.ulMenu{
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#icone{
+    margin-right: 12px;
+    
+}
+nav{
+    background-color: rgb(5, 138, 65);
+    position:relative;
+    left: 0;
+    width: 220px;
+    height: 100%;
+}
+.navbar-brand{
+    font-size: 40px !important;
+    color: rgb(223, 231, 217);
+    margin-left: 20px;
+}
+
+.navBarMenu{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.navigateMenu:hover{
+    color: rgb(139, 138, 138);
+}
+.sair{
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 12px;
+    color: #F1EDED;
+}
+.navigateMenuSair{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+.navigateMenuSair:hover{
+    color: rgb(139, 138, 138);
+}
+.children{
+    position: fixed;
+    left: 220px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+
+}
